@@ -74,3 +74,14 @@ input, textarea {
 	font-size: 14px;
 	margin: 16px 0;
 }
+
+.current-user {
+	color: #177e17;
+	font-size: 14px;
+	border-right: 1px solid var(--primary);
+	padding-right: 15px;
+}
+
+.current-user:hover {
+	text-decoration: underline;
+}

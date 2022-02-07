@@ -24,7 +24,23 @@ const useDocument = (collection, id) => {
 		}
 	}
 
-  return { error, document, deleteDoc }
+	// updating document songs
+	const updateSong = async (updates) => {
+		isPending.value = true
+		error.value = null
+
+		try{
+			const res = await docRef.update(updates)
+			isPending.value = false
+			return res
+		} catch(err) {
+			console.log(err.message)
+			isPending.value = false
+			error.value = 'could not update the document'
+		}
+	}
+
+  return { error, document, deleteDoc, updateSong }
 
 }
 

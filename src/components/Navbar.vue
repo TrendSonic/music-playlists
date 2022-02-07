@@ -4,6 +4,8 @@
 			<h1><router-link :to="{ name: 'Home' }">Ninja Music</router-link></h1>
 			<div class="links">
 				<div v-if="user">
+					<span class="current-user">{{ user.displayName }}</span>
+					<router-link :to="{ name: 'UserPlaylists' }">My playlists</router-link>
 					<router-link :to="{ name: 'CreatePlaylist' }">Create playlist</router-link>
 					<button @click="handleClick">Logout</button>
 				</div>
